@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="eluceo – iCal creator : iCal-creator for PHP" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>eluceo – iCal creator</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/eluceo/iCal">View on GitHub</a>
+
+          <h1 id="project_title">eluceo – iCal creator</h1>
+          <h2 id="project_tagline">iCal-creator for PHP</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/eluceo/iCal/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/eluceo/iCal/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>eluceo — iCal</h1>
+
+<p>This package offers a abstraction layer for creating iCalendars. The output will 
+follow <a href="http://www.ietf.org/rfc/rfc2445.txt">RFC 2445</a> as best as possible.</p>
+
+<p>The following components are supported at this time:</p>
+
+<ul>
+<li>VCALENDAR</li>
+<li>VEVENT</li>
+</ul><h2>Usage</h2>
+
+<h3>1. Create a Calendar object</h3>
+
+<div class="highlight"><pre><span class="nv">$vCalendar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Eluceo\iCal\Component\Calendar</span><span class="p">(</span><span class="s1">'www.example.com'</span><span class="p">);</span>
+</pre></div>
+
+<h3>2. Create an Event object</h3>
+
+<div class="highlight"><pre><span class="nv">$vEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Eluceo\iCal\Component\Event</span><span class="p">();</span>
+</pre></div>
+
+<h3>3. Add your information to the Event</h3>
+
+<div class="highlight"><pre><span class="nv">$vEvent</span><span class="o">-&gt;</span><span class="na">setDtStart</span><span class="p">(</span><span class="k">new</span> <span class="nx">\DateTime</span><span class="p">(</span><span class="s1">'2012-12-24'</span><span class="p">));</span>
+<span class="nv">$vEvent</span><span class="o">-&gt;</span><span class="na">setDtEnd</span><span class="p">(</span><span class="k">new</span> <span class="nx">\DateTime</span><span class="p">(</span><span class="s1">'2012-12-24'</span><span class="p">));</span>
+<span class="nv">$vEvent</span><span class="o">-&gt;</span><span class="na">setNoTime</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$vEvent</span><span class="o">-&gt;</span><span class="na">setSummary</span><span class="p">(</span><span class="s1">'Christmas'</span><span class="p">);</span>
+</pre></div>
+
+<h3>4. Add Event to Calendar</h3>
+
+<div class="highlight"><pre><span class="nv">$vCalendar</span><span class="o">-&gt;</span><span class="na">addEvent</span><span class="p">(</span><span class="nv">$vEvent</span><span class="p">);</span>
+</pre></div>
+
+<h3>5. Set HTTP-headers</h3>
+
+<div class="highlight"><pre><span class="nx">header</span><span class="p">(</span><span class="s1">'Content-Type: text/calendar; charset=utf-8'</span><span class="p">);</span>
+<span class="nx">header</span><span class="p">(</span><span class="s1">'Content-Disposition: attachment; filename="cal.ics"'</span><span class="p">);</span>
+</pre></div>
+
+<h3>6. Send output</h3>
+
+<div class="highlight"><pre><span class="k">echo</span> <span class="nv">$vCalendar</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">();</span>
+</pre></div>
+
+<h2>License</h2>
+
+<p>This package is released under the <strong>MIT license</strong>.</p>
+
+<p>Copyright (c) 2012-2013 Markus Poerschke</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">eluceo – iCal creator maintained by <a href="https://github.com/eluceo">eluceo</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
